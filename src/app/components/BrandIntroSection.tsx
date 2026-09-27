@@ -3,8 +3,8 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 
 const stats = [
   { value: '68+', label: 'Years of Craftsmanship', sub: 'Since 1956' },
-  { value: '100K', label: 'Sq. Ft. Facility', sub: 'Aligarh, India' },
-  { value: '4', label: 'Continents Served', sub: 'USA · UK · EU · AU' },
+  { value: '100K+', label: 'Sq. Ft. Facility', sub: 'Aligarh & Rajkot, India' },
+  { value: '4', label: 'Continents Served', sub: 'USA · UK · EU · Middle East' },
 ];
 
 export default function BrandIntroSection() {
@@ -15,7 +15,7 @@ export default function BrandIntroSection() {
         <ScrollAnimation animationClass="reveal-up" className="text-center mb-20">
           <div className="divider-gold w-24 mx-auto mb-8" />
           <h2 className="font-display text-section-xl font-light text-foreground max-w-4xl mx-auto leading-tight">
-            Since <span className="italic text-accent">1956</span>, crafting precision hardware for the world's most demanding architectural projects.
+            Since <span className="italic text-accent">1956</span>, crafting precision hardware for the world's most demanding architectural and industrial projects.
           </h2>
           <div className="divider-gold w-24 mx-auto mt-8" />
         </ScrollAnimation>
@@ -51,16 +51,19 @@ export default function BrandIntroSection() {
             <h3 className="font-display text-display-sm font-semibold text-foreground mb-4">
               Three Generations of Manufacturing Excellence
             </h3>
+            <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+              Liberty Brass International traces its roots to 1956, when Mr. Shiv Shankar Varshney founded Liberty Electricals in Aligarh. Castle Hardwares followed in 1965 as a premium architectural hardware manufacturer, and Liberty Brass International was incorporated in 1986 exclusively for exports.
+            </p>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              Liberty Brass International, the parent company of Liberty Metal Works, was founded in 1956 by Mr. Shiv Shankar Varshney. Today, as a third-generation family business, we continue to uphold the highest standards of craftsmanship — now under the leadership of Mr. Varun Gupta, Managing Partner and Head of Product Development.
+              Today, as a third-generation family business under the leadership of Mr. Varun Gupta (Managing Partner), we operate 100,000+ sq. ft. of ISO-certified manufacturing across Aligarh and Rajkot — serving customers in the USA, UK, Europe, Canada, and the Middle East.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: 'Casting', desc: 'Precision brass casting for complex architectural forms' },
-              { label: 'Forging', desc: 'High-strength forged components for durability' },
-              { label: 'Stamping', desc: 'Accurate sheet-metal stamping for repeatability' },
-              { label: 'Fabrication', desc: 'Custom fabrication for bespoke project requirements' },
+              { label: 'Casting & Forging', desc: 'Diecasting, sand-casting, and forging for complex architectural forms' },
+              { label: 'Stamping & Fabrication', desc: 'High-tonnage press work and CNC laser cutting for precision profiles' },
+              { label: 'Machining', desc: 'CNC machining, drilling, and tapping for consistent tolerances' },
+              { label: 'Finishing', desc: 'Polishing, electroplating, powder coating, anodising, and lacquering' },
             ]?.map((cap) => (
               <div key={cap?.label} className="border border-border p-5 hover:border-accent/50 transition-colors duration-300">
                 <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-2">{cap?.label}</span>
