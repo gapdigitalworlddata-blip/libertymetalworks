@@ -66,7 +66,7 @@ const team = [
   name: 'Atul Gupta',
   qualification: 'MBA',
   designation: 'Director',
-  image: "https://img.rocket.new/generatedImages/rocket_gen_img_1a79b8e72-1763295320816.png",
+  image: "/assets/images/image-1790487366559.png",
   alt: 'Atul Gupta, Director at Liberty Brass International, professional portrait'
 },
 {
