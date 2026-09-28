@@ -31,11 +31,11 @@ const categories = [
 },
 {
   id: '04',
-  name: 'Door Handles',
-  description: 'Luxury lever and pull handles for premium interiors',
+  name: 'Door Knockers',
+  description: '',
   href: '/products',
-  image: "https://images.unsplash.com/photo-1524575986238-c1fb1c0b1ebb",
-  alt: 'Luxury brass door handle premium interior hardware, dark moody setting'
+  image: "/assets/images/ChatGPT_Image_Sep_28__2026__11_16_00_AM-1790574372167.png",
+  alt: 'Golden door knockers collection featuring premium decorative brass hardware'
 }];
 
 
@@ -76,7 +76,7 @@ export default function ProductCategoriesSection() {
                   src={cat?.image}
                   alt={cat?.alt}
                   fill
-                  className={cat?.id === '01' || cat?.id === '02' || cat?.id === '03' ? 'object-contain' : 'object-cover'}
+                  className="object-contain"
                   sizes="(max-width: 640px) 100vw, 50vw" />
                 
                 </div>
