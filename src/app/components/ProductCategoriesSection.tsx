@@ -23,11 +23,11 @@ const categories = [
 },
 {
   id: '03',
-  name: 'Hooks',
-  description: 'Decorative coat, hat and utility hooks',
+  name: 'Door Hinges',
+  description: '',
   href: '/products',
-  image: "https://images.unsplash.com/photo-1683535610173-5fe4ad76770c",
-  alt: 'Decorative brass hooks on wall, warm dim lighting, architectural interior'
+  image: "/assets/images/ChatGPT_Image_Sep_28__2026__11_11_12_AM-1790574081946.png",
+  alt: 'Door hinges collection featuring premium quality architectural hardware'
 },
 {
   id: '04',
@@ -76,7 +76,7 @@ export default function ProductCategoriesSection() {
                   src={cat?.image}
                   alt={cat?.alt}
                   fill
-                  className={cat?.id === '01' || cat?.id === '02' ? 'object-contain' : 'object-cover'}
+                  className={cat?.id === '01' || cat?.id === '02' || cat?.id === '03' ? 'object-contain' : 'object-cover'}
                   sizes="(max-width: 640px) 100vw, 50vw" />
                 
                 </div>
