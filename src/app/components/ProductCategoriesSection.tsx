@@ -7,11 +7,11 @@ import Icon from '@/components/ui/AppIcon';
 const categories = [
 {
   id: '01',
-  name: 'Door Grills',
-  description: 'Ornate brass and iron grills for doors and windows',
+  name: 'Door Hardware',
+  description: '',
   href: '/products',
-  image: "https://images.unsplash.com/photo-1688649721280-bf00b7ba6997",
-  alt: 'Ornate metal door grill architectural detail, dark industrial setting, moody shadows'
+  image: "/assets/images/ChatGPT_Image_Sep_28__2026__10_57_30_AM-1790573289712.png",
+  alt: 'Door hardware collection featuring premium handles and accessories'
 },
 {
   id: '02',
@@ -76,7 +76,7 @@ export default function ProductCategoriesSection() {
                   src={cat?.image}
                   alt={cat?.alt}
                   fill
-                  className="object-cover"
+                  className={cat?.id === '01' ? 'object-contain' : 'object-cover'}
                   sizes="(max-width: 640px) 100vw, 50vw" />
                 
                 </div>
@@ -96,7 +96,7 @@ export default function ProductCategoriesSection() {
                     <h3 className="font-display text-3xl font-semibold text-primary-foreground mb-2 uppercase tracking-wide">
                       {cat?.name}
                     </h3>
-                    <p className="text-primary-foreground/60 text-xs mb-4 leading-relaxed">{cat?.description}</p>
+                    {cat?.description && <p className="text-primary-foreground/60 text-xs mb-4 leading-relaxed">{cat?.description}</p>}
                     <div className="flex items-center gap-2 text-accent text-xs font-semibold tracking-architectural uppercase">
                       Explore Collection
                       <Icon name="ArrowRightIcon" size={12} variant="outline" className="transform group-hover:translate-x-1 transition-transform" />
