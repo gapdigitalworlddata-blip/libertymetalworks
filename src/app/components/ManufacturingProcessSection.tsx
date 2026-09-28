@@ -60,10 +60,10 @@ export default function ManufacturingProcessSection() {
           <ScrollAnimation animationClass="reveal-left" className="sticky top-32">
             <div className="relative aspect-[4/5] overflow-hidden">
               <AppImage
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_1540e3edf-1767103234296.png"
-                alt="Industrial metal manufacturing facility with machinery and workers in bright factory setting"
+                src="/assets/images/ChatGPT_Image_Sep_28__2026__11_28_35_AM-1790575160365.png"
+                alt="Factory floor with metal manufacturing machinery and industrial equipment"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw" />
               
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
@@ -73,9 +73,9 @@ export default function ManufacturingProcessSection() {
                   { val: '100K', lbl: 'Sq. Ft. Plant' },
                   { val: 'ISO', lbl: '9001 · 14001 · 45001' }].
                   map((s) =>
-                  <div key={s.val} className="bg-primary/80 backdrop-blur-sm p-4 border border-accent/20">
-                      <span className="font-display text-2xl font-semibold text-accent block">{s.val}</span>
-                      <span className="text-primary-foreground/70 text-xs tracking-wide">{s.lbl}</span>
+                  <div key={s.val} className="backdrop-blur-sm p-4 border border-white/20" style={{ backgroundColor: '#123524' }}>
+                      <span className="font-display text-2xl font-semibold block" style={{ color: '#ffffff' }}>{s.val}</span>
+                      <span className="text-xs tracking-wide" style={{ color: 'rgba(255,255,255,0.8)' }}>{s.lbl}</span>
                     </div>
                   )}
                 </div>

@@ -4,25 +4,26 @@ import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
-const desktopSlides = [
+const heroSlides = [
   {
-    src: '/assets/images/Untitled_design__18_-1789641176096.png',
-    alt: 'Premium architectural hardware wide landscape display',
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_21_14_AM-1790571085764.png',
+    alt: 'Liberty Metal Works premium door handles and architectural hardware',
   },
   {
-    src: '/assets/images/Untitled_design__19_-1789642096987.png',
-    alt: 'Premium architectural hooks hardware for global B2B markets',
-  },
-];
-
-const mobileSlides = [
-  {
-    src: '/assets/images/ChatGPT_Image_Sep_17__2026__03_50_09_PM-1789640425997.png',
-    alt: 'Premium architectural hardware portrait view for mobile',
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_23_33_AM-1790571223293.png',
+    alt: 'Liberty Metal Works premium locks and keys collection',
   },
   {
-    src: '/assets/images/Untitled_design__19_-1789642096987.png',
-    alt: 'Premium architectural hooks hardware mobile view',
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_27_49_AM-1790571484383.png',
+    alt: 'Liberty Metal Works premium casement stay and window bolt architectural hardware',
+  },
+  {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_31_32_AM-1790571711940.png',
+    alt: 'Liberty Metal Works premium golden ventilation grill architectural hardware',
+  },
+  {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_35_19_AM-1790571932548.png',
+    alt: 'Liberty Metal Works premium chrome double hooks architectural hardware',
   },
 ];
 
@@ -44,10 +45,12 @@ export default function HeroSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % desktopSlides?.length);
-    }, 4000);
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
     <section className="relative w-full overflow-hidden bg-dark-bg">
@@ -76,10 +79,6 @@ export default function HeroSection() {
           0%, 100% { transform: translateY(0); }
           50%       { transform: translateY(6px); }
         }
-        @keyframes slideFadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
         .hero-bg-anim {
           animation: heroScaleIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
         }
@@ -106,15 +105,6 @@ export default function HeroSection() {
           animation-delay: 1.1s;
           opacity: 0;
         }
-        .hero-scroll-anim {
-          animation: heroFadeIn 1s ease both;
-          animation-delay: 1.8s;
-          opacity: 0;
-        }
-        .hero-scroll-icon {
-          animation: heroScrollBounce 1.8s ease-in-out infinite;
-          animation-delay: 2.2s;
-        }
         .hero-cta-btn {
           transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
         }
@@ -123,25 +113,25 @@ export default function HeroSection() {
           box-shadow: 0 8px 24px rgba(18,53,36,0.25);
           opacity: 0.88;
         }
-        .slide-fade {
-          animation: slideFadeIn 0.8s ease both;
+        .hero-slide {
+          transition: opacity 0.8s ease-in-out;
         }
       `}</style>
 
-      {/* ── MOBILE LAYOUT (text overlaid centered on image) ── */}
+      {/* ── MOBILE LAYOUT ── */}
       <div className="block md:hidden">
         <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
-          {mobileSlides?.map((slide, idx) => (
+          {heroSlides.map((slide, index) => (
             <div
-              key={idx}
-              className={`absolute inset-0 transition-opacity duration-800 ${currentSlide === idx ? 'opacity-100 slide-fade' : 'opacity-0'}`}
-              style={{ transitionDuration: '800ms' }}
+              key={index}
+              className="hero-slide absolute inset-0"
+              style={{ opacity: currentSlide === index ? 1 : 0 }}
             >
               <AppImage
-                src={slide?.src}
-                alt={slide?.alt}
+                src={slide.src}
+                alt={slide.alt}
                 fill
-                priority={idx === 0}
+                priority={index === 0}
                 className="object-contain"
                 sizes="100vw"
               />
@@ -177,36 +167,36 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Slide dots — mobile */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-            {mobileSlides?.map((_, idx) => (
+          {/* Slide dots */}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+            {heroSlides.map((_, index) => (
               <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
+                key={index}
+                onClick={() => goToSlide(index)}
                 className="w-2 h-2 rounded-full transition-all duration-300"
-                style={{ backgroundColor: currentSlide === idx ? '#123524' : 'rgba(18,53,36,0.35)' }}
-                aria-label={`Go to slide ${idx + 1}`}
+                style={{ backgroundColor: currentSlide === index ? '#123524' : 'rgba(18,53,36,0.4)' }}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
       </div>
 
-      {/* ── DESKTOP LAYOUT (original full-screen hero) ── */}
+      {/* ── DESKTOP LAYOUT ── */}
       <div className="hidden md:block relative min-h-screen">
-        {/* Background Image Carousel with Parallax */}
+        {/* Background Images with Parallax */}
         <div ref={parallaxRef} className={`absolute inset-0 scale-110 ${mounted ? 'hero-bg-anim' : ''}`}>
-          {desktopSlides?.map((slide, idx) => (
+          {heroSlides.map((slide, index) => (
             <div
-              key={idx}
-              className="absolute inset-0 transition-opacity"
-              style={{ opacity: currentSlide === idx ? 1 : 0, transitionDuration: '800ms' }}
+              key={index}
+              className="hero-slide absolute inset-0"
+              style={{ opacity: currentSlide === index ? 1 : 0 }}
             >
               <AppImage
-                src={slide?.src}
-                alt={slide?.alt}
+                src={slide.src}
+                alt={slide.alt}
                 fill
-                priority={idx === 0}
+                priority={index === 0}
                 className="object-contain"
                 sizes="100vw"
               />
@@ -249,25 +239,17 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Slide dots — desktop */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {desktopSlides?.map((_, idx) => (
+        {/* Slide dots */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-20">
+          {heroSlides.map((_, index) => (
             <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
+              key={index}
+              onClick={() => goToSlide(index)}
               className="w-2.5 h-2.5 rounded-full transition-all duration-300"
-              style={{ backgroundColor: currentSlide === idx ? '#123524' : 'rgba(18,53,36,0.35)' }}
-              aria-label={`Go to slide ${idx + 1}`}
+              style={{ backgroundColor: currentSlide === index ? '#123524' : 'rgba(18,53,36,0.4)' }}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 ${mounted ? 'hero-scroll-anim' : 'opacity-0'}`}>
-          <span className="text-xs tracking-architectural uppercase" style={{ color: '#12352466' }}>Scroll</span>
-          <div className="hero-scroll-icon">
-            <Icon name="ChevronDownIcon" size={20} variant="outline" style={{ color: '#12352499' }} />
-          </div>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ export default function CTASection() {
             Let's Build Something<br />
             <span className="italic font-light text-accent">That Lasts.</span>
           </h2>
-          <p className="text-primary-foreground/60 text-sm max-w-xl mx-auto leading-relaxed mb-10">
+          <p className="text-white text-sm max-w-xl mx-auto leading-relaxed mb-10">
             Whether you're an importer, distributor, architect or sourcing partner — we're ready to discuss how Liberty Metal Works can serve your requirements.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

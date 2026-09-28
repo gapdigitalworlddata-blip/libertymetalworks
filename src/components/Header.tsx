@@ -9,8 +9,6 @@ const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Products', href: '/products' },
   { label: 'Manufacturing', href: '/manufacturing' },
-  { label: 'Quality', href: '/products' },
-  { label: 'B2B / Export', href: '/b2b-export' },
   { label: 'Contact', href: '/contact' },
 ];
 

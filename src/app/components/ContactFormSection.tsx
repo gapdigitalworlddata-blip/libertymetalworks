@@ -48,7 +48,7 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-1">Address</span>
-                  <p className="text-primary-foreground/60 text-sm leading-relaxed">
+                  <p className="text-white text-sm leading-relaxed">
                     LBI, ITI Road, Aligarh – 202001<br />
                     Uttar Pradesh, India
                   </p>
@@ -60,7 +60,7 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-1">Phone / WhatsApp</span>
-                  <a href="tel:+917017203139" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors">
+                  <a href="tel:+917017203139" className="text-white text-sm hover:text-accent transition-colors">
                     +91-7017203139
                   </a>
                 </div>
@@ -71,10 +71,10 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-1">Email</span>
-                  <a href="mailto:Export@libertymetalworks.in" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors block">
+                  <a href="mailto:Export@libertymetalworks.in" className="text-white text-sm hover:text-accent transition-colors block">
                     Export@libertymetalworks.in
                   </a>
-                  <a href="mailto:Varun@libertybrassintl.com" className="text-primary-foreground/60 text-sm hover:text-accent transition-colors block mt-1">
+                  <a href="mailto:Varun@libertybrassintl.com" className="text-white text-sm hover:text-accent transition-colors block mt-1">
                     Varun@libertybrassintl.com
                   </a>
                 </div>
