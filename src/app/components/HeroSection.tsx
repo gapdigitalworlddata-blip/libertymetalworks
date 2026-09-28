@@ -10,6 +10,10 @@ const heroSlides = [
     alt: 'Liberty Metal Works premium door handles and architectural hardware',
   },
   {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_23_33_AM-1790571223293.png',
+    alt: 'Liberty Metal Works premium locks and keys collection',
+  },
+  {
     src: '/assets/images/Untitled_design__23_-1790570924550.png',
     alt: 'Liberty Metal Works premium architectural hardware showcase',
   },
