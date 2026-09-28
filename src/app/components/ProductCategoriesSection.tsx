@@ -15,11 +15,11 @@ const categories = [
 },
 {
   id: '02',
-  name: 'Door Bolts',
-  description: 'Precision-engineered bolts in multiple finishes',
+  name: 'Cabinet Knobs',
+  description: '',
   href: '/products',
-  image: "https://images.unsplash.com/photo-1578758510223-e96564f45388",
-  alt: 'Brass door bolt precision hardware, dark atmospheric background, metallic sheen'
+  image: "/assets/images/ChatGPT_Image_Sep_28__2026__11_06_22_AM-1790573794388.png",
+  alt: 'Cabinet knobs collection featuring premium decorative hardware'
 },
 {
   id: '03',
@@ -76,7 +76,7 @@ export default function ProductCategoriesSection() {
                   src={cat?.image}
                   alt={cat?.alt}
                   fill
-                  className={cat?.id === '01' ? 'object-contain' : 'object-cover'}
+                  className={cat?.id === '01' || cat?.id === '02' ? 'object-contain' : 'object-cover'}
                   sizes="(max-width: 640px) 100vw, 50vw" />
                 
                 </div>
