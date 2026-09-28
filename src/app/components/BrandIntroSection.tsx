@@ -1,11 +1,6 @@
 import React from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
-
-const stats = [
-  { value: '68+', label: 'Years of Craftsmanship', sub: 'Since 1956' },
-  { value: '100K+', label: 'Sq. Ft. Facility', sub: 'Aligarh & Rajkot, India' },
-  { value: '4', label: 'Continents Served', sub: 'USA · UK · EU · Middle East' },
-];
+import Image from 'next/image';
 
 export default function BrandIntroSection() {
   return (
@@ -20,29 +15,21 @@ export default function BrandIntroSection() {
           <div className="divider-gold w-24 mx-auto mt-8" />
         </ScrollAnimation>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border">
-          {stats?.map((stat, i) => (
-            <ScrollAnimation
-              key={stat?.value}
-              animationClass="reveal-up"
-              delay={i * 120}
-              className={`flex flex-col items-center justify-center py-14 px-8 text-center ${
-                i < stats?.length - 1 ? 'sm:border-r border-b sm:border-b-0 border-border' : ''
-              }`}
-            >
-              <span className="stat-number gold-gradient-text font-display font-semibold mb-2">
-                {stat?.value}
-              </span>
-              <span className="text-foreground font-semibold text-sm tracking-architectural uppercase mb-1">
-                {stat?.label}
-              </span>
-              <span className="text-muted-foreground text-xs tracking-wide">
-                {stat?.sub}
-              </span>
-            </ScrollAnimation>
-          ))}
-        </div>
+        {/* Facility Image */}
+        <ScrollAnimation animationClass="reveal-up" delay={100}>
+          <div className="w-full border border-border flex items-center justify-center" style={{ minHeight: '260px' }}>
+            <div className="relative w-full" style={{ minHeight: '260px' }}>
+              <Image
+                src="/assets/images/ChatGPT_Image_Sep_28__2026__10_46_23_AM-1790572765921.png"
+                alt="Liberty Electricals manufacturing facility aerial view"
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                className="w-full"
+                priority
+              />
+            </div>
+          </div>
+        </ScrollAnimation>
 
         {/* Description */}
         <ScrollAnimation animationClass="reveal-up" delay={200} className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
