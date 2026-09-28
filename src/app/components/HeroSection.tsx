@@ -14,6 +14,10 @@ const heroSlides = [
     alt: 'Liberty Metal Works premium locks and keys collection',
   },
   {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_27_49_AM-1790571484383.png',
+    alt: 'Liberty Metal Works premium casement stay and window bolt architectural hardware',
+  },
+  {
     src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_25_44_AM-1790571356475.png',
     alt: 'Liberty Metal Works premium golden door knocker architectural hardware',
   },
