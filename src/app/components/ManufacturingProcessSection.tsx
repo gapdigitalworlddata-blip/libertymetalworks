@@ -60,7 +60,7 @@ export default function ManufacturingProcessSection() {
           <ScrollAnimation animationClass="reveal-left" className="sticky top-32">
             <div className="relative aspect-[4/5] overflow-hidden">
               <AppImage
-                src="/assets/images/image-1790574424087.png"
+                src="/assets/images/ChatGPT_Image_Sep_28__2026__11_28_35_AM-1790575160365.png"
                 alt="Factory floor with metal manufacturing machinery and industrial equipment"
                 fill
                 className="object-contain"
