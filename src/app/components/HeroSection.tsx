@@ -4,14 +4,21 @@ import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
-const heroImage = {
-  src: '/assets/images/Untitled_design__23_-1790570924550.png',
-  alt: 'Liberty Metal Works premium architectural hardware showcase',
-};
+const heroSlides = [
+  {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_21_14_AM-1790571085764.png',
+    alt: 'Liberty Metal Works premium door handles and architectural hardware',
+  },
+  {
+    src: '/assets/images/Untitled_design__23_-1790570924550.png',
+    alt: 'Liberty Metal Works premium architectural hardware showcase',
+  },
+];
 
 export default function HeroSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -23,6 +30,15 @@ export default function HeroSection() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
     <section className="relative w-full overflow-hidden bg-dark-bg">
@@ -85,19 +101,30 @@ export default function HeroSection() {
           box-shadow: 0 8px 24px rgba(18,53,36,0.25);
           opacity: 0.88;
         }
+        .hero-slide {
+          transition: opacity 0.8s ease-in-out;
+        }
       `}</style>
 
       {/* ── MOBILE LAYOUT ── */}
       <div className="block md:hidden">
         <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
-          <AppImage
-            src={heroImage?.src}
-            alt={heroImage?.alt}
-            fill
-            priority
-            className="object-contain"
-            sizes="100vw"
-          />
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className="hero-slide absolute inset-0"
+              style={{ opacity: currentSlide === index ? 1 : 0 }}
+            >
+              <AppImage
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          ))}
 
           {/* Overlay text centered on image */}
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 z-10"
@@ -127,21 +154,42 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>
+
+          {/* Slide dots */}
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className="w-2 h-2 rounded-full transition-all duration-300"
+                style={{ backgroundColor: currentSlide === index ? '#123524' : 'rgba(18,53,36,0.4)' }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* ── DESKTOP LAYOUT ── */}
       <div className="hidden md:block relative min-h-screen">
-        {/* Background Image with Parallax */}
+        {/* Background Images with Parallax */}
         <div ref={parallaxRef} className={`absolute inset-0 scale-110 ${mounted ? 'hero-bg-anim' : ''}`}>
-          <AppImage
-            src={heroImage?.src}
-            alt={heroImage?.alt}
-            fill
-            priority
-            className="object-contain"
-            sizes="100vw"
-          />
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className="hero-slide absolute inset-0"
+              style={{ opacity: currentSlide === index ? 1 : 0 }}
+            >
+              <AppImage
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Subtle overlay */}
@@ -177,6 +225,19 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Slide dots */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-20">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className="w-2.5 h-2.5 rounded-full transition-all duration-300"
+              style={{ backgroundColor: currentSlide === index ? '#123524' : 'rgba(18,53,36,0.4)' }}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
