@@ -14,8 +14,8 @@ export default function BrandIntroSection() {
         {/* Main Quote */}
         <ScrollAnimation animationClass="reveal-up" className="text-center mb-20">
           <div className="divider-gold w-24 mx-auto mb-8" />
-          <h3 className="font-display text-xl md:text-2xl font-light text-foreground max-w-4xl mx-auto leading-tight">
-            Founded in <span className="italic text-accent">1956</span>, Liberty Electricals has built a legacy of quality, innovation, and engineering excellence in electrical accessories and hardware.
+          <h3 className="font-display text-xl md:text-2xl font-light max-w-4xl mx-auto leading-tight bg-green-100 text-green-800 px-6 py-3 rounded-md inline-block">
+            Founded in <span className="italic font-semibold">1956</span>, Liberty Electricals has built a legacy of quality, innovation, and engineering excellence in electrical accessories and hardware.
           </h3>
           <div className="divider-gold w-24 mx-auto mt-8" />
         </ScrollAnimation>
