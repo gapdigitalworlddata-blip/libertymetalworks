@@ -18,6 +18,10 @@ const heroSlides = [
     alt: 'Liberty Metal Works premium casement stay and window bolt architectural hardware',
   },
   {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_31_32_AM-1790571711940.png',
+    alt: 'Liberty Metal Works premium golden ventilation grill architectural hardware',
+  },
+  {
     src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_25_44_AM-1790571356475.png',
     alt: 'Liberty Metal Works premium golden door knocker architectural hardware',
   },
