@@ -21,6 +21,10 @@ const heroSlides = [
     src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_31_32_AM-1790571711940.png',
     alt: 'Liberty Metal Works premium golden ventilation grill architectural hardware',
   },
+  {
+    src: '/assets/images/ChatGPT_Image_Sep_28__2026__10_35_19_AM-1790571932548.png',
+    alt: 'Liberty Metal Works premium chrome double hooks architectural hardware',
+  },
 ];
 
 export default function HeroSection() {
