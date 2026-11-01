@@ -6,25 +6,28 @@ import Icon from '@/components/ui/AppIcon';
 
 const desktopSlides = [
   {
-    src: '/assets/images/Untitled_design__18_-1789641176096.png',
-    alt: 'Premium architectural hardware wide landscape display',
+    src: 'https://images.pexels.com/photos/30992408/pexels-photo-30992408.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Premium door handle and architectural hardware',
   },
   {
-    src: '/assets/images/Untitled_design__19_-1789642096987.png',
-    alt: 'Premium architectural hooks hardware for global B2B markets',
+    src: 'https://images.pexels.com/photos/16053387/pexels-photo-16053387.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Premium locks and keys collection',
+  },
+  {
+    src: 'https://images.pexels.com/photos/17503605/pexels-photo-17503605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Premium casement stay and window bolt architectural hardware',
+  },
+  {
+    src: 'https://images.pexels.com/photos/38597656/pexels-photo-38597656.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Premium golden ventilation grill architectural hardware',
+  },
+  {
+    src: 'https://images.pexels.com/photos/38235555/pexels-photo-38235555.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Premium chrome double hooks architectural hardware',
   },
 ];
 
-const mobileSlides = [
-  {
-    src: '/assets/images/ChatGPT_Image_Sep_17__2026__03_50_09_PM-1789640425997.png',
-    alt: 'Premium architectural hardware portrait view for mobile',
-  },
-  {
-    src: '/assets/images/Untitled_design__19_-1789642096987.png',
-    alt: 'Premium architectural hooks hardware mobile view',
-  },
-];
+const mobileSlides = desktopSlides;
 
 export default function HeroSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -142,7 +145,7 @@ export default function HeroSection() {
                 alt={slide?.alt}
                 fill
                 priority={idx === 0}
-                className="object-contain"
+                className="object-cover"
                 sizes="100vw"
               />
             </div>
@@ -207,7 +210,7 @@ export default function HeroSection() {
                 alt={slide?.alt}
                 fill
                 priority={idx === 0}
-                className="object-contain"
+                className="object-cover"
                 sizes="100vw"
               />
             </div>
@@ -215,33 +218,33 @@ export default function HeroSection() {
         </div>
 
         {/* Subtle overlay */}
-        <div className={`absolute inset-0 z-10 ${mounted ? 'hero-overlay-anim' : ''}`} style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.18) 100%)' }} />
+        <div className={`absolute inset-0 z-10 ${mounted ? 'hero-overlay-anim' : ''}`} style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15) 100%)' }} />
 
         {/* Content — left side */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pb-20 pt-36 flex items-center justify-start min-h-screen">
           <div className="max-w-md text-left">
             {/* Eyebrow */}
             <div className={`flex items-center justify-start gap-3 mb-8 ${mounted ? 'hero-eyebrow-anim' : 'opacity-0'}`}>
-              <div className={`h-px ${mounted ? 'hero-divider-anim' : 'opacity-0'}`} style={{ backgroundColor: '#123524', width: '3rem' }} />
-              <span className="text-xs font-black tracking-architectural uppercase" style={{ color: '#123524' }}>
+              <div className={`h-px ${mounted ? 'hero-divider-anim' : 'opacity-0'}`} style={{ backgroundColor: '#C2A56D', width: '3rem' }} />
+              <span className="text-xs font-black tracking-architectural uppercase" style={{ color: '#C2A56D' }}>
                 Since 1956 · Aligarh, India · Global Export
               </span>
             </div>
 
             {/* Subheading */}
-            <p className={`text-base font-bold leading-relaxed mb-10 ${mounted ? 'hero-sub-anim' : 'opacity-0'}`} style={{ color: '#123524' }}>
+            <p className={`text-base font-bold leading-relaxed mb-10 ${mounted ? 'hero-sub-anim' : 'opacity-0'}`} style={{ color: '#ffffff' }}>
               Premium Architectural Hardware for Global B2B Markets. ISO-certified precision manufacturing exported to USA, UK, Europe, and beyond.
             </p>
 
             {/* CTAs */}
             <div className={`flex flex-wrap gap-4 justify-start ${mounted ? 'hero-cta-anim' : 'opacity-0'}`}>
               <Link href="/products" className="hero-cta-btn inline-flex items-center gap-2 px-6 py-3 text-sm font-black tracking-widest uppercase border-2"
-                style={{ color: '#123524', borderColor: '#123524' }}>
+                style={{ color: '#ffffff', borderColor: '#C2A56D' }}>
                 Explore Collection
                 <Icon name="ArrowRightIcon" size={14} variant="outline" />
               </Link>
               <Link href="/contact" className="hero-cta-btn inline-flex items-center gap-2 px-6 py-3 text-sm font-black tracking-widest uppercase"
-                style={{ backgroundColor: '#123524', color: '#ffffff' }}>
+                style={{ backgroundColor: '#C2A56D', color: '#123524' }}>
                 Request a Quote
                 <Icon name="ArrowUpRightIcon" size={14} variant="outline" />
               </Link>
@@ -256,7 +259,7 @@ export default function HeroSection() {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className="w-2.5 h-2.5 rounded-full transition-all duration-300"
-              style={{ backgroundColor: currentSlide === idx ? '#123524' : 'rgba(18,53,36,0.35)' }}
+              style={{ backgroundColor: currentSlide === idx ? '#C2A56D' : 'rgba(194,165,109,0.35)' }}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
@@ -264,9 +267,9 @@ export default function HeroSection() {
 
         {/* Scroll Indicator */}
         <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 ${mounted ? 'hero-scroll-anim' : 'opacity-0'}`}>
-          <span className="text-xs tracking-architectural uppercase" style={{ color: '#12352466' }}>Scroll</span>
+          <span className="text-xs tracking-architectural uppercase" style={{ color: 'rgba(194,165,109,0.6)' }}>Scroll</span>
           <div className="hero-scroll-icon">
-            <Icon name="ChevronDownIcon" size={20} variant="outline" style={{ color: '#12352499' }} />
+            <Icon name="ChevronDownIcon" size={20} variant="outline" style={{ color: 'rgba(194,165,109,0.7)' }} />
           </div>
         </div>
       </div>

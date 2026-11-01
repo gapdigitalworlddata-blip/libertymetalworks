@@ -5,39 +5,39 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import Icon from '@/components/ui/AppIcon';
 
 const categories = [
-{
-  id: '01',
-  name: 'Door Grills',
-  description: 'Ornate brass and iron grills for doors and windows',
-  href: '/products',
-  image: "https://images.unsplash.com/photo-1688649721280-bf00b7ba6997",
-  alt: 'Ornate metal door grill architectural detail, dark industrial setting, moody shadows'
-},
-{
-  id: '02',
-  name: 'Door Bolts',
-  description: 'Precision-engineered bolts in multiple finishes',
-  href: '/products',
-  image: "https://images.unsplash.com/photo-1578758510223-e96564f45388",
-  alt: 'Brass door bolt precision hardware, dark atmospheric background, metallic sheen'
-},
-{
-  id: '03',
-  name: 'Hooks',
-  description: 'Decorative coat, hat and utility hooks',
-  href: '/products',
-  image: "https://images.unsplash.com/photo-1683535610173-5fe4ad76770c",
-  alt: 'Decorative brass hooks on wall, warm dim lighting, architectural interior'
-},
-{
-  id: '04',
-  name: 'Door Handles',
-  description: 'Luxury lever and pull handles for premium interiors',
-  href: '/products',
-  image: "https://images.unsplash.com/photo-1524575986238-c1fb1c0b1ebb",
-  alt: 'Luxury brass door handle premium interior hardware, dark moody setting'
-}];
-
+  {
+    id: '01',
+    name: 'Door Hardware',
+    description: 'Premium handles and accessories for doors',
+    href: '/products',
+    image: 'https://images.pexels.com/photos/30992408/pexels-photo-30992408.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Close-up of a hand turning an ornate brass door handle, showcasing elegant craftsmanship',
+  },
+  {
+    id: '02',
+    name: 'Cabinet Knobs',
+    description: 'Premium decorative knobs for cabinets',
+    href: '/products',
+    image: 'https://images.pexels.com/photos/38235555/pexels-photo-38235555.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Close-up of a vintage brass door knob on a wooden door with intricate floral design',
+  },
+  {
+    id: '03',
+    name: 'Door Hinges',
+    description: 'Premium quality architectural hardware',
+    href: '/products',
+    image: 'https://images.pexels.com/photos/17503605/pexels-photo-17503605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Detailed view of a rustic metal hinge on a weathered wooden door',
+  },
+  {
+    id: '04',
+    name: 'Door Knockers',
+    description: 'Premium decorative brass hardware',
+    href: '/products',
+    image: 'https://images.pexels.com/photos/38597656/pexels-photo-38597656.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Traditional red door featuring an ornate brass lion knocker',
+  },
+];
 
 export default function ProductCategoriesSection() {
   return (
@@ -58,27 +58,23 @@ export default function ProductCategoriesSection() {
         </ScrollAnimation>
 
         {/* Grid — 2×2 */}
-        {/* BENTO AUDIT: 4 cards, 2×2 grid */}
-        {/* Row 1: [col-1: Door Grills] [col-2: Door Bolts] */}
-        {/* Row 2: [col-1: Hooks] [col-2: Door Handles] */}
-        {/* Placed 4/4 ✓ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {categories?.map((cat, i) =>
-          <ScrollAnimation key={cat?.id} animationClass="reveal-up" delay={i * 100}>
+          {categories?.map((cat, i) => (
+            <ScrollAnimation key={cat?.id} animationClass="reveal-up" delay={i * 100}>
               <Link
-              href={cat?.href}
-              className="group relative block overflow-hidden product-card-hover gold-border-reveal"
-              style={{ aspectRatio: '4/3' }}>
-              
+                href={cat?.href}
+                className="group relative block overflow-hidden product-card-hover gold-border-reveal"
+                style={{ aspectRatio: '4/3' }}
+              >
                 {/* Image */}
                 <div className="image-zoom-container absolute inset-0">
                   <AppImage
-                  src={cat?.image}
-                  alt={cat?.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 50vw" />
-                
+                    src={cat?.image}
+                    alt={cat?.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
                 </div>
 
                 {/* Overlay */}
@@ -105,9 +101,9 @@ export default function ProductCategoriesSection() {
                 </div>
               </Link>
             </ScrollAnimation>
-          )}
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
