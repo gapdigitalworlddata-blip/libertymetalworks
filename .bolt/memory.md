@@ -27,6 +27,9 @@
 
 - `not-found.tsx` must NOT use `'use client'` or client-side imports — caused `workUnitAsyncStorage` Runtime InvariantError
 - Removed extra script tags from `layout.tsx` to fix same error
+- `@dhiwise/component-tagger` webpack loader removed from `next.config.mjs` — it injected `data-*` attributes into JSX during dev mode, corrupting the RSC tree and causing `workUnitAsyncStorage` InvariantError
+- **Turbopack is required** — Bolt (WebContainer) has a known platform-level bug with Next.js 15.5.x + Webpack causing `workUnitAsyncStorage` InvariantError; `--turbopack` flag added to both `dev` and `build` scripts in `package.json`
+- Bolt preview runs on port 3000, not the dev script port (4028)
 - Changes made within Bolt project files; GitHub push requires separate setup
 - Bolt has its own deployment system
 - Build passes clean with no errors
