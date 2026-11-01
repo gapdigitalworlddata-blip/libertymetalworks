@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL('https://libertymetalworks.vercel.app'),
   title: 'Liberty Metal Works — Premium Architectural Hardware',
   description: 'Liberty Metal Works crafts precision architectural hardware for global B2B markets. ISO-certified manufacturer exporting to USA, UK, Europe and beyond since 1956.',
   icons: {
