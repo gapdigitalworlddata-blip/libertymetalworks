@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import Icon from '@/components/ui/AppIcon';
 
-const productCategories = ['Door Grills', 'Door Bolts', 'Hooks', 'Door Handles', 'Other'];
+const productCategories = ['Door Hardware', 'Cabinet Knobs', 'Door Hinges', 'Door Knockers', 'Other'];
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({

@@ -2,28 +2,37 @@
 
 ## Product intent & audience
 
-- Project uses Next.js framework
-- User communicates in Hindi (Romanized/Hinglish); prefers conversational, direct responses
-- User expects to request changes conversationally; assistant implements them in the Bolt environment
+- Next.js project for a hardware manufacturing company (Castle Hardwares, est. 1965; Liberty Brass International, est. 1986)
+- Operations in Aligarh and Rajkot, India
+- B2B export-oriented business
+- User communicates in Hinglish; prefers conversational, direct responses
 
 ## Brand personality & voice
 
-- Respond in Hinglish (Romanized Hindi) to match user's communication style
+- Respond in Hinglish (Romanized Hindi)
 - Tone: helpful, direct, no jargon overload
-- Be upfront about what can/cannot be done (e.g., can't push directly to GitHub from Bolt)
+- Be upfront about limitations (e.g., can't push directly to GitHub from Bolt)
 
 ## Visual design & UX direction
 
-- Not yet inferred — awaiting user's specific change requests
+- Multi-page site: Home, About, Products, Manufacturing, Contact, B2B Export
+- Home: Hero with 5 product image slides; brand intro with heritage text; product categories; manufacturing & quality sections
+- About: Timeline with 6 milestones (starting 1965)
+- Products: 4 categories (Door Hardware, Cabinet Knobs, Door Hinges, Door Knockers), 24 products total
+- Manufacturing: Process steps with images
+- Contact: Product categories dropdown
+- Images: Pexels used throughout (replaced previous rocket.new/unsplash URLs)
 
 ## Decisions, constraints & rationale
 
-- Changes are made within Bolt project files, not directly on GitHub
-- Bolt has its own deployment system; GitHub push requires separate setup
-- Next.js is the chosen framework
+- `not-found.tsx` must NOT use `'use client'` or client-side imports — caused `workUnitAsyncStorage` Runtime InvariantError
+- Removed extra script tags from `layout.tsx` to fix same error
+- Changes made within Bolt project files; GitHub push requires separate setup
+- Bolt has its own deployment system
+- Build passes clean with no errors
 
 ## Open questions & assumptions
 
-- What specific changes does the user want to make?
-- Is there an existing codebase or is this a fresh project?
-- Will GitHub integration be needed later?
+- Is there an existing GitHub repo to sync with later?
+- Will user need additional pages or features beyond current scope?
+- Are Pexels images final or will brand-specific product photos be provided?

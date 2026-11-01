@@ -8,28 +8,28 @@ import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 
 const capabilities = [
-{ icon: 'BuildingStorefrontIcon', title: 'Bulk Manufacturing', desc: 'High-volume production for large-scale import and distribution programs. Scalable capacity for consistent supply.' },
-{ icon: 'PencilSquareIcon', title: 'Custom Development', desc: 'Bespoke product development for architects, designers and branded hardware programs from concept to production.' },
-{ icon: 'SwatchIcon', title: 'Multiple Finishes', desc: 'Polished lacquered brass, antique (black/brass, black/chrome), powder coated and anti-tarnish finishes available.' },
-{ icon: 'ArchiveBoxIcon', title: 'Export Packaging', desc: 'C-TPAT certified export-grade packaging engineered for safe international freight and customs compliance.' },
-{ icon: 'TagIcon', title: 'OEM / Private Label', desc: 'Full OEM and private label manufacturing. Your brand, our precision. For distributors and hardware brands.' },
-{ icon: 'TruckIcon', title: 'Reliable Supply', desc: 'Consistent lead times and supply chain reliability built for long-term international partnership programs.' }];
-
+  { icon: 'BuildingStorefrontIcon', title: 'Bulk Manufacturing', desc: 'High-volume production for large-scale import and distribution programs. Scalable capacity for consistent supply.' },
+  { icon: 'PencilSquareIcon', title: 'Custom Development', desc: 'Bespoke product development for architects, designers and branded hardware programs from concept to production.' },
+  { icon: 'SwatchIcon', title: 'Multiple Finishes', desc: 'Polished lacquered brass, antique (black/brass, black/chrome), powder coated and anti-tarnish finishes available.' },
+  { icon: 'ArchiveBoxIcon', title: 'Export Packaging', desc: 'C-TPAT certified export-grade packaging engineered for safe international freight and customs compliance.' },
+  { icon: 'TagIcon', title: 'OEM / Private Label', desc: 'Full OEM and private label manufacturing. Your brand, our precision. For distributors and hardware brands.' },
+  { icon: 'TruckIcon', title: 'Reliable Supply', desc: 'Consistent lead times and supply chain reliability built for long-term international partnership programs.' },
+];
 
 const markets = [
-{ label: 'United States', flag: '🇺🇸', desc: 'Primary export market. Marketing office in California.' },
-{ label: 'United Kingdom', flag: '🇬🇧', desc: 'Long-standing export relationships with UK distributors.' },
-{ label: 'Germany', flag: '🇩🇪', desc: 'Supplying German architectural hardware importers.' },
-{ label: 'France', flag: '🇫🇷', desc: 'Premium architectural hardware for French market.' },
-{ label: 'Canada', flag: '🇨🇦', desc: 'North American distribution via Canadian partners.' },
-{ label: 'Australia', flag: '🇦🇺', desc: 'Growing presence in Australian B2B hardware market.' }];
+  { label: 'United States', flag: '🇺🇸', desc: 'Primary export market. Marketing office in California.' },
+  { label: 'United Kingdom', flag: '🇬🇧', desc: 'Long-standing export relationships with UK distributors.' },
+  { label: 'Germany', flag: '🇩🇪', desc: 'Supplying German architectural hardware importers.' },
+  { label: 'France', flag: '🇫🇷', desc: 'Premium architectural hardware for French market.' },
+  { label: 'Canada', flag: '🇨🇦', desc: 'North American distribution via Canadian partners.' },
+  { label: 'Australia', flag: '🇦🇺', desc: 'Growing presence in Australian B2B hardware market.' },
+];
 
-
-const productCategories = ['Door Grills', 'Door Bolts', 'Hooks', 'Door Handles', 'Other'];
+const productCategories = ['Door Hardware', 'Cabinet Knobs', 'Door Hinges', 'Door Knockers', 'Other'];
 
 export default function B2BExportPage() {
   const [formData, setFormData] = useState({
-    name: '', company: '', country: '', email: '', phone: '', category: '', requirement: '', message: ''
+    name: '', company: '', country: '', email: '', phone: '', category: '', requirement: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -81,9 +81,7 @@ export default function B2BExportPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation animationClass="reveal-up" className="mb-14">
             <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-3">Export Markets</span>
-            <h2 className="font-display text-section-xl font-semibold text-foreground">
-              Where We Ship
-            </h2>
+            <h2 className="font-display text-section-xl font-semibold text-foreground">Where We Ship</h2>
           </ScrollAnimation>
 
           {/* World Map */}
@@ -98,36 +96,32 @@ export default function B2BExportPage() {
                 <path d="M600 250 L680 240 L700 300 L660 330 L610 320 L590 280 Z" fill="rgba(194,165,109,0.4)" stroke="rgba(194,165,109,0.6)" strokeWidth="1.5" />
               </svg>
               {[
-              { label: 'USA', x: '20%', y: '38%', delay: '0s' },
-              { label: 'UK', x: '46%', y: '25%', delay: '0.3s' },
-              { label: 'DE', x: '50%', y: '26%', delay: '0.6s' },
-              { label: 'CA', x: '18%', y: '28%', delay: '0.9s' },
-              { label: 'AU', x: '80%', y: '68%', delay: '1.2s' },
-              { label: 'IN', x: '64%', y: '42%', delay: '1.5s' }].
-              map((dot) =>
-              <div
-                key={dot.label}
-                className="absolute flex flex-col items-center"
-                style={{ left: dot.x, top: dot.y, transform: 'translate(-50%,-50%)' }}>
-                
+                { label: 'USA', x: '20%', y: '38%', delay: '0s' },
+                { label: 'UK', x: '46%', y: '25%', delay: '0.3s' },
+                { label: 'DE', x: '50%', y: '26%', delay: '0.6s' },
+                { label: 'CA', x: '18%', y: '28%', delay: '0.9s' },
+                { label: 'AU', x: '80%', y: '68%', delay: '1.2s' },
+                { label: 'IN', x: '64%', y: '42%', delay: '1.5s' },
+              ].map((dot) => (
+                <div key={dot.label} className="absolute flex flex-col items-center" style={{ left: dot.x, top: dot.y, transform: 'translate(-50%,-50%)' }}>
                   <div className="world-dot w-3 h-3 rounded-full bg-accent" style={{ animationDelay: dot.delay }} />
                   <span className="text-accent font-semibold mt-1 hidden sm:block" style={{ fontSize: '9px' }}>{dot.label}</span>
                 </div>
-              )}
+              ))}
             </div>
           </ScrollAnimation>
 
           {/* Market Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {markets.map((market, i) =>
-            <ScrollAnimation key={market.label} animationClass="reveal-up" delay={i * 60}>
+            {markets.map((market, i) => (
+              <ScrollAnimation key={market.label} animationClass="reveal-up" delay={i * 60}>
                 <div className="border border-border p-5 text-center hover:border-accent/50 transition-all duration-300 group">
                   <span className="text-3xl block mb-3">{market.flag}</span>
                   <span className="font-semibold text-foreground text-xs tracking-architectural uppercase block mb-2">{market.label}</span>
                   <p className="text-muted-foreground text-xs leading-relaxed hidden sm:block">{market.desc}</p>
                 </div>
               </ScrollAnimation>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -140,8 +134,8 @@ export default function B2BExportPage() {
             <h2 className="font-display text-section-xl font-semibold text-primary-foreground">B2B Capabilities</h2>
           </ScrollAnimation>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {capabilities.map((cap, i) =>
-            <ScrollAnimation key={cap.title} animationClass="reveal-up" delay={i * 80}>
+            {capabilities.map((cap, i) => (
+              <ScrollAnimation key={cap.title} animationClass="reveal-up" delay={i * 80}>
                 <div className="border border-accent/15 p-8 hover:border-accent/40 hover:bg-accent/5 transition-all duration-300 group">
                   <div className="w-10 h-10 border border-accent/20 flex items-center justify-center mb-5 group-hover:border-accent transition-colors">
                     <Icon name={cap.icon as 'CubeIcon'} size={18} variant="outline" className="text-accent" />
@@ -150,7 +144,7 @@ export default function B2BExportPage() {
                   <p className="text-primary-foreground/50 text-xs leading-relaxed">{cap.desc}</p>
                 </div>
               </ScrollAnimation>
-            )}
+            ))}
           </div>
           <ScrollAnimation animationClass="reveal-up" delay={200}>
             <p className="text-primary-foreground/30 text-xs text-center max-w-lg mx-auto leading-relaxed">
@@ -172,28 +166,28 @@ export default function B2BExportPage() {
               </h2>
               <div className="flex flex-col gap-5">
                 {[
-                { icon: 'ShieldCheckIcon', point: 'ISO 9001:2015 certified quality management system' },
-                { icon: 'GlobeAltIcon', point: 'Export experience to USA, UK, Europe and Canada' },
-                { icon: 'TrophyIcon', point: 'Highest Export Performance Award — Ministry of Commerce, India' },
-                { icon: 'UserGroupIcon', point: 'Third-generation family business with 68+ years of precision manufacturing' },
-                { icon: 'CogIcon', point: 'C-TPAT certified packaging and logistics compliance' }].
-                map((item) =>
-                <div key={item.point} className="flex items-start gap-4">
+                  { icon: 'ShieldCheckIcon', point: 'ISO 9001:2015 certified quality management system' },
+                  { icon: 'GlobeAltIcon', point: 'Export experience to USA, UK, Europe and Canada' },
+                  { icon: 'TrophyIcon', point: 'Highest Export Performance Award — Ministry of Commerce, India' },
+                  { icon: 'UserGroupIcon', point: 'Third-generation family business with 68+ years of precision manufacturing' },
+                  { icon: 'CogIcon', point: 'C-TPAT certified packaging and logistics compliance' },
+                ].map((item) => (
+                  <div key={item.point} className="flex items-start gap-4">
                     <Icon name={item.icon as 'ShieldCheckIcon'} size={16} variant="outline" className="text-accent flex-shrink-0 mt-0.5" />
                     <p className="text-primary/70 text-sm leading-relaxed">{item.point}</p>
                   </div>
-                )}
+                ))}
               </div>
             </ScrollAnimation>
             <ScrollAnimation animationClass="reveal-right">
               <div className="aspect-square overflow-hidden image-zoom-container relative">
                 <AppImage
-                  src="https://img.rocket.new/generatedImages/rocket_gen_img_122d56994-1771885570568.png"
+                  src="https://images.pexels.com/photos/30992408/pexels-photo-30992408.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
                   alt="Luxury brass door hardware architectural detail, warm well-lit interior setting"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw" />
-                
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-primary/85 backdrop-blur-sm p-5 border border-accent/20">
                     <span className="text-accent font-semibold text-sm block mb-1">Aligarh, India</span>
@@ -211,25 +205,23 @@ export default function B2BExportPage() {
         <div className="max-w-3xl mx-auto">
           <ScrollAnimation animationClass="reveal-up" className="text-center mb-14">
             <span className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-4">Start a Conversation</span>
-            <h2 className="font-display text-section-xl font-semibold text-primary-foreground mb-4">
-              Partnership Enquiry
-            </h2>
+            <h2 className="font-display text-section-xl font-semibold text-primary-foreground mb-4">Partnership Enquiry</h2>
             <p className="text-primary-foreground/50 text-sm leading-relaxed">
               Tell us about your requirements and our export team will respond within 24–48 business hours.
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animationClass="reveal-up" delay={100}>
-            {submitted ?
-            <div className="border border-accent/20 p-12 text-center">
+            {submitted ? (
+              <div className="border border-accent/20 p-12 text-center">
                 <Icon name="CheckCircleIcon" size={40} variant="outline" className="text-accent mx-auto mb-4" />
                 <h3 className="font-display text-2xl font-semibold text-primary-foreground mb-3">Enquiry Received</h3>
                 <p className="text-primary-foreground/50 text-sm leading-relaxed">
                   Thank you for your partnership enquiry. Our export team will be in touch within 24–48 business hours.
                 </p>
-              </div> :
-
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-accent text-xs font-semibold tracking-architectural uppercase block mb-2">Name *</label>
@@ -276,12 +268,12 @@ export default function B2BExportPage() {
                   <Icon name="ArrowRightIcon" size={14} variant="outline" />
                 </button>
               </form>
-            }
+            )}
           </ScrollAnimation>
         </div>
       </section>
 
       <Footer />
-    </main>);
-
+    </main>
+  );
 }

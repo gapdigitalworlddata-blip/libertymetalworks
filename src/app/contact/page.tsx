@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import Icon from '@/components/ui/AppIcon';
 
-const productCategories = ['Door Grills', 'Door Bolts', 'Hooks', 'Door Handles', 'Other'];
+const productCategories = ['Door Hardware', 'Cabinet Knobs', 'Door Hinges', 'Door Knockers', 'Other'];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -166,7 +166,7 @@ export default function ContactPage() {
                       <label className="text-foreground text-xs font-semibold tracking-architectural uppercase block mb-2">Product Category</label>
                       <select name="category" value={formData.category} onChange={handleChange} className="form-input-light w-full px-4 py-3 text-sm">
                         <option value="">Select category</option>
-                        {productCategories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+                        {productCategories.map((cat) => <option key={cat} value={cat}>{cat}</option>)}
                       </select>
                     </div>
                   </div>
